@@ -59,6 +59,4 @@ Locale Icons made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
 
 ## Team-Mitglieder
-Miriam
-Ange
-Steffi
+Miriam, Ange, Steffi
