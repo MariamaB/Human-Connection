@@ -170,7 +170,7 @@ export default {
       this.offset = 0
       const { query } = formData
       if (isemail.validate(query)) {
-        this.email = query.toLowerCase()
+        this.email = query
         this.filter = null
       } else {
         this.email = null

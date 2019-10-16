@@ -6,7 +6,6 @@ export default async ({ store, env, route, redirect }) => {
   if (publicPages.indexOf(route.name) >= 0) {
     return true
   }
-
   if (route.name === 'terms-and-conditions-confirm') return true // avoid endless loop
 
   if (store.getters['auth/termsAndConditionsAgreed']) return true

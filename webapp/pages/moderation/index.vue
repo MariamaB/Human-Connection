@@ -1,29 +1,8 @@
 <template>
   <ds-card space="small">
     <ds-heading tag="h3">{{ $t('moderation.reports.name') }}</ds-heading>
-    <ds-table v-if="reports && reports.length" :data="reports" :fields="fields" condensed>
-      <!-- Icon -->
-      <template slot="type" slot-scope="scope">
-        <ds-text color="soft">
-          <ds-icon
-            v-if="scope.row.type === 'Post'"
-            v-tooltip="{ content: $t('report.contribution.type'), placement: 'right' }"
-            name="bookmark"
-          />
-          <ds-icon
-            v-else-if="scope.row.type === 'Comment'"
-            v-tooltip="{ content: $t('report.comment.type'), placement: 'right' }"
-            name="comments"
-          />
-          <ds-icon
-            v-else-if="scope.row.type === 'User'"
-            v-tooltip="{ content: $t('report.user.type'), placement: 'right' }"
-            name="user"
-          />
-        </ds-text>
-      </template>
-      <!-- reported user or content -->
-      <template slot="reportedUserContent" slot-scope="scope">
+    <ds-table v-if="Report && Report.length" :data="Report" :fields="fields" condensed>
+      <template slot="name" slot-scope="scope">
         <div v-if="scope.row.type === 'Post'">
           <nuxt-link
             :to="{
@@ -63,15 +42,25 @@
           </nuxt-link>
         </div>
       </template>
-      <!-- reasonCategory -->
-      <template slot="reasonCategory" slot-scope="scope">
-        {{ $t('report.reason.category.options.' + scope.row.reasonCategory) }}
+      <template slot="type" slot-scope="scope">
+        <ds-text color="soft">
+          <ds-icon
+            v-if="scope.row.type === 'Post'"
+            v-tooltip="{ content: $t('report.contribution.type'), placement: 'right' }"
+            name="bookmark"
+          />
+          <ds-icon
+            v-else-if="scope.row.type === 'Comment'"
+            v-tooltip="{ content: $t('report.comment.type'), placement: 'right' }"
+            name="comments"
+          />
+          <ds-icon
+            v-else-if="scope.row.type === 'User'"
+            v-tooltip="{ content: $t('report.user.type'), placement: 'right' }"
+            name="user"
+          />
+        </ds-text>
       </template>
-      <!-- reasonDescription -->
-      <template slot="reasonDescription" slot-scope="scope">
-        {{ scope.row.reasonDescription }}
-      </template>
-      <!-- submitter -->
       <template slot="submitter" slot-scope="scope">
         <nuxt-link
           :to="{
@@ -82,15 +71,6 @@
           {{ scope.row.submitter.name }}
         </nuxt-link>
       </template>
-      <!-- createdAt -->
-      <template slot="createdAt" slot-scope="scope">
-        <ds-text size="small">
-          <client-only>
-            <hc-relative-date-time :date-time="scope.row.createdAt" />
-          </client-only>
-        </ds-text>
-      </template>
-      <!-- disabledBy -->
       <template slot="disabledBy" slot-scope="scope">
         <nuxt-link
           v-if="scope.row.type === 'Post' && scope.row.post.disabledBy"
@@ -122,7 +102,6 @@
         >
           <b>{{ scope.row.user.disabledBy.name | truncate(50) }}</b>
         </nuxt-link>
-        <b v-else>—</b>
       </template>
     </ds-table>
     <hc-empty v-else icon="alert" :message="$t('moderation.reports.empty')" />
@@ -131,36 +110,31 @@
 
 <script>
 import HcEmpty from '~/components/Empty.vue'
-import HcRelativeDateTime from '~/components/RelativeDateTime'
-import { reportListQuery } from '~/graphql/Moderation.js'
+import query from '~/graphql/ModerationListQuery.js'
 
 export default {
   components: {
     HcEmpty,
-    HcRelativeDateTime,
   },
   data() {
     return {
-      reports: [],
+      Report: [],
     }
   },
   computed: {
     fields() {
       return {
         type: ' ',
-        reportedUserContent: ' ',
-        reasonCategory: this.$t('moderation.reports.reasonCategory'),
-        reasonDescription: this.$t('moderation.reports.reasonDescription'),
+        name: ' ',
         submitter: this.$t('moderation.reports.submitter'),
-        createdAt: this.$t('moderation.reports.createdAt'),
         disabledBy: this.$t('moderation.reports.disabledBy'),
         // actions: ' '
       }
     },
   },
   apollo: {
-    reports: {
-      query: reportListQuery(),
+    Report: {
+      query,
       fetchPolicy: 'cache-and-network',
     },
   },

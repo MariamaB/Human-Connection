@@ -24,8 +24,10 @@ import { gql } from '../jest/helpers'
     })
     const { mutate } = createTestClient(server)
 
+    const f = Factory()
+
     const [Hamburg, Berlin, Germany, Paris, France] = await Promise.all([
-      factory.create('Location', {
+      f.create('Location', {
         id: 'region.5127278006398860',
         name: 'Hamburg',
         type: 'region',
@@ -40,7 +42,7 @@ import { gql } from '../jest/helpers'
         nameNL: 'Hamburg',
         namePL: 'Hamburg',
       }),
-      factory.create('Location', {
+      f.create('Location', {
         id: 'region.14880313158564380',
         type: 'region',
         name: 'Berlin',
@@ -55,7 +57,7 @@ import { gql } from '../jest/helpers'
         nameNL: 'Berlijn',
         namePL: 'Berlin',
       }),
-      factory.create('Location', {
+      f.create('Location', {
         id: 'country.10743216036480410',
         name: 'Germany',
         type: 'country',
@@ -68,7 +70,7 @@ import { gql } from '../jest/helpers'
         nameIT: 'Germania',
         nameEN: 'Germany',
       }),
-      factory.create('Location', {
+      f.create('Location', {
         id: 'region.9397217726497330',
         name: 'Paris',
         type: 'region',
@@ -83,7 +85,7 @@ import { gql } from '../jest/helpers'
         nameNL: 'Parijs',
         namePL: 'Paryż',
       }),
-      factory.create('Location', {
+      f.create('Location', {
         id: 'country.9759535382641660',
         name: 'France',
         type: 'country',
@@ -104,27 +106,27 @@ import { gql } from '../jest/helpers'
     ])
 
     const [racoon, rabbit, wolf, bear, turtle, rhino] = await Promise.all([
-      factory.create('Badge', {
+      f.create('Badge', {
         id: 'indiegogo_en_racoon',
         icon: '/img/badges/indiegogo_en_racoon.svg',
       }),
-      factory.create('Badge', {
+      f.create('Badge', {
         id: 'indiegogo_en_rabbit',
         icon: '/img/badges/indiegogo_en_rabbit.svg',
       }),
-      factory.create('Badge', {
+      f.create('Badge', {
         id: 'indiegogo_en_wolf',
         icon: '/img/badges/indiegogo_en_wolf.svg',
       }),
-      factory.create('Badge', {
+      f.create('Badge', {
         id: 'indiegogo_en_bear',
         icon: '/img/badges/indiegogo_en_bear.svg',
       }),
-      factory.create('Badge', {
+      f.create('Badge', {
         id: 'indiegogo_en_turtle',
         icon: '/img/badges/indiegogo_en_turtle.svg',
       }),
-      factory.create('Badge', {
+      f.create('Badge', {
         id: 'indiegogo_en_rhino',
         icon: '/img/badges/indiegogo_en_rhino.svg',
       }),
@@ -139,49 +141,49 @@ import { gql } from '../jest/helpers'
       louie,
       dagobert,
     ] = await Promise.all([
-      factory.create('User', {
+      f.create('User', {
         id: 'u1',
         name: 'Peter Lustig',
         slug: 'peter-lustig',
         role: 'admin',
         email: 'admin@example.org',
       }),
-      factory.create('User', {
+      f.create('User', {
         id: 'u2',
         name: 'Bob der Baumeister',
         slug: 'bob-der-baumeister',
         role: 'moderator',
         email: 'moderator@example.org',
       }),
-      factory.create('User', {
+      f.create('User', {
         id: 'u3',
         name: 'Jenny Rostock',
         slug: 'jenny-rostock',
         role: 'user',
         email: 'user@example.org',
       }),
-      factory.create('User', {
+      f.create('User', {
         id: 'u4',
         name: 'Huey',
         slug: 'huey',
         role: 'user',
         email: 'huey@example.org',
       }),
-      factory.create('User', {
+      f.create('User', {
         id: 'u5',
         name: 'Dewey',
         slug: 'dewey',
         role: 'user',
         email: 'dewey@example.org',
       }),
-      factory.create('User', {
+      f.create('User', {
         id: 'u6',
         name: 'Louie',
         slug: 'louie',
         role: 'user',
         email: 'louie@example.org',
       }),
-      factory.create('User', {
+      f.create('User', {
         id: 'u7',
         name: 'Dagobert',
         slug: 'dagobert',
@@ -224,97 +226,97 @@ import { gql } from '../jest/helpers'
     ])
 
     await Promise.all([
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat1',
         name: 'Just For Fun',
         slug: 'just-for-fun',
         icon: 'smile',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat2',
         name: 'Happiness & Values',
         slug: 'happiness-values',
         icon: 'heart-o',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat3',
         name: 'Health & Wellbeing',
         slug: 'health-wellbeing',
         icon: 'medkit',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat4',
         name: 'Environment & Nature',
         slug: 'environment-nature',
         icon: 'tree',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat5',
         name: 'Animal Protection',
         slug: 'animal-protection',
         icon: 'paw',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat6',
         name: 'Human Rights & Justice',
         slug: 'human-rights-justice',
         icon: 'balance-scale',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat7',
         name: 'Education & Sciences',
         slug: 'education-sciences',
         icon: 'graduation-cap',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat8',
         name: 'Cooperation & Development',
         slug: 'cooperation-development',
         icon: 'users',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat9',
         name: 'Democracy & Politics',
         slug: 'democracy-politics',
         icon: 'university',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat10',
         name: 'Economy & Finances',
         slug: 'economy-finances',
         icon: 'money',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat11',
         name: 'Energy & Technology',
         slug: 'energy-technology',
         icon: 'flash',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat12',
         name: 'IT, Internet & Data Privacy',
         slug: 'it-internet-data-privacy',
         icon: 'mouse-pointer',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat13',
         name: 'Art, Culture & Sport',
         slug: 'art-culture-sport',
         icon: 'paint-brush',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat14',
         name: 'Freedom of Speech',
         slug: 'freedom-of-speech',
         icon: 'bullhorn',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat15',
         name: 'Consumption & Sustainability',
         slug: 'consumption-sustainability',
         icon: 'shopping-cart',
       }),
-      factory.create('Category', {
+      f.create('Category', {
         id: 'cat16',
         name: 'Global Peace & Nonviolence',
         slug: 'global-peace-nonviolence',
@@ -323,16 +325,16 @@ import { gql } from '../jest/helpers'
     ])
 
     const [environment, nature, democracy, freedom] = await Promise.all([
-      factory.create('Tag', {
+      f.create('Tag', {
         id: 'Environment',
       }),
-      factory.create('Tag', {
+      f.create('Tag', {
         id: 'Nature',
       }),
-      factory.create('Tag', {
+      f.create('Tag', {
         id: 'Democracy',
       }),
-      factory.create('Tag', {
+      f.create('Tag', {
         id: 'Freedom',
       }),
     ])
@@ -647,15 +649,10 @@ import { gql } from '../jest/helpers'
     ])
     authenticatedUser = null
 
-    // There is no error logged or the 'try' fails if this mutation is wrong. Why?
     const reportMutation = gql`
-      mutation($resourceId: ID!, $reasonCategory: ReasonCategory!, $reasonDescription: String!) {
-        report(
-          resourceId: $resourceId
-          reasonCategory: $reasonCategory
-          reasonDescription: $reasonDescription
-        ) {
-          type
+      mutation($id: ID!, $description: String!) {
+        report(description: $description, id: $id) {
+          id
         }
       }
     `
@@ -664,25 +661,22 @@ import { gql } from '../jest/helpers'
       mutate({
         mutation: reportMutation,
         variables: {
-          resourceId: 'c1',
-          reasonCategory: 'other',
-          reasonDescription: 'This comment is bigoted',
+          description: 'This comment is bigoted',
+          id: 'c1',
         },
       }),
       mutate({
         mutation: reportMutation,
         variables: {
-          resourceId: 'p1',
-          reasonCategory: 'discrimination_etc',
-          reasonDescription: 'This post is bigoted',
+          description: 'This post is bigoted',
+          id: 'p1',
         },
       }),
       mutate({
         mutation: reportMutation,
         variables: {
-          resourceId: 'u1',
-          reasonCategory: 'doxing',
-          reasonDescription: 'This user is harassing me with bigoted remarks',
+          description: 'This user is harassing me with bigoted remarks',
+          id: 'u1',
         },
       }),
     ])
@@ -690,223 +684,7 @@ import { gql } from '../jest/helpers'
 
     await Promise.all(
       [...Array(30).keys()].map(i => {
-        return factory.create('User')
-      }),
-    )
-
-    await Promise.all(
-      [...Array(30).keys()].map(() => {
-        return factory.create('Post', {
-          author: jennyRostock,
-          image: faker.image.unsplash.objects(),
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(6).keys()].map(() => {
-        return factory.create('Comment', {
-          author: jennyRostock,
-          postId: 'p2',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(4).keys()].map(() => {
-        return factory.create('Comment', {
-          author: jennyRostock,
-          postId: 'p15',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(2).keys()].map(() => {
-        return factory.create('Comment', {
-          author: jennyRostock,
-          postId: 'p4',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(21).keys()].map(() => {
-        return factory.create('Post', {
-          author: peterLustig,
-          image: faker.image.unsplash.buildings(),
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(3).keys()].map(() => {
-        return factory.create('Comment', {
-          author: peterLustig,
-          postId: 'p4',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(5).keys()].map(() => {
-        return factory.create('Comment', {
-          author: peterLustig,
-          postId: 'p14',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(6).keys()].map(() => {
-        return factory.create('Comment', {
-          author: peterLustig,
-          postId: 'p0',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(11).keys()].map(() => {
-        return factory.create('Post', {
-          author: dewey,
-          image: faker.image.unsplash.food(),
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(7).keys()].map(() => {
-        return factory.create('Comment', {
-          author: dewey,
-          postId: 'p2',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(5).keys()].map(() => {
-        return factory.create('Comment', {
-          author: dewey,
-          postId: 'p6',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(2).keys()].map(() => {
-        return factory.create('Comment', {
-          author: dewey,
-          postId: 'p9',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(16).keys()].map(() => {
-        return factory.create('Post', {
-          author: louie,
-          image: faker.image.unsplash.technology(),
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(4).keys()].map(() => {
-        return factory.create('Comment', {
-          author: louie,
-          postId: 'p1',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(8).keys()].map(() => {
-        return factory.create('Comment', {
-          author: louie,
-          postId: 'p10',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(5).keys()].map(() => {
-        return factory.create('Comment', {
-          author: louie,
-          postId: 'p13',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(45).keys()].map(() => {
-        return factory.create('Post', {
-          author: bobDerBaumeister,
-          image: faker.image.unsplash.people(),
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(2).keys()].map(() => {
-        return factory.create('Comment', {
-          author: bobDerBaumeister,
-          postId: 'p2',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(3).keys()].map(() => {
-        return factory.create('Comment', {
-          author: bobDerBaumeister,
-          postId: 'p12',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(7).keys()].map(() => {
-        return factory.create('Comment', {
-          author: bobDerBaumeister,
-          postId: 'p13',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(8).keys()].map(() => {
-        return factory.create('Post', {
-          author: huey,
-          image: faker.image.unsplash.nature(),
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(6).keys()].map(() => {
-        return factory.create('Comment', {
-          author: huey,
-          postId: 'p0',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(8).keys()].map(() => {
-        return factory.create('Comment', {
-          author: huey,
-          postId: 'p13',
-        })
-      }),
-    )
-
-    await Promise.all(
-      [...Array(9).keys()].map(() => {
-        return factory.create('Comment', {
-          author: huey,
-          postId: 'p15',
-        })
+        return f.create('User')
       }),
     )
 

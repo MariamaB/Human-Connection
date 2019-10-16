@@ -12,13 +12,7 @@
         <ds-space />
         <hc-user :user="currentUser" :trunc="35" />
         <ds-space />
-        <ds-input
-          model="title"
-          class="post-title"
-          :placeholder="$t('contribution.title')"
-          name="title"
-          autofocus
-        />
+        <ds-input model="title" class="post-title" placeholder="Title" name="title" autofocus />
         <small class="smallTag">{{ form.title.length }}/{{ formSchema.title.max }}</small>
         <client-only>
           <hc-editor
@@ -268,7 +262,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .smallTag {
   width: 100%;
   position: relative;

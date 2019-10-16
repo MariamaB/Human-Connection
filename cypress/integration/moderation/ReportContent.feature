@@ -50,8 +50,8 @@ Feature: Report and Moderate
 
   Scenario: Review reported content
     Given somebody reported the following posts:
-      | submitterEmail           | resourceId | reasonCategory     | reasonDescription |
-      | p1.submitter@example.org | p1         | discrimination_etc | Offensive content |
+      | id |
+      | p1 |
     And I am logged in with a "moderator" role
     When I click on the avatar menu in the top right corner
     And I click on "Moderation"
@@ -60,8 +60,8 @@ Feature: Report and Moderate
 
   Scenario: Review reported posts of a user who's blocked a moderator
     Given somebody reported the following posts:
-      | submitterEmail           | resourceId | reasonCategory | reasonDescription |
-      | p2.submitter@example.org | p2         | other          | Offensive content |
+      | id |
+      | p2 |
     And my user account has the role "moderator"
     And there is an annoying user who has blocked me
     And I am logged in

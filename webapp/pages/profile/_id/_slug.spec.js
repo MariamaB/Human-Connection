@@ -139,23 +139,7 @@ describe('ProfileSlug', () => {
               wrapper.setData({ posts, hasMore: true })
             })
 
-            it('does not display a "load more" button', () => {
-              expect(wrapper.find('.load-more').exists()).toBe(false)
-            })
-          })
-
-          describe('pagination returned at least as many posts as pageSize', () => {
-            beforeEach(() => {
-              const posts = [1, 2, 3, 4, 5, 6].map(id => {
-                return {
-                  ...aPost,
-                  id,
-                }
-              })
-              wrapper.setData({ posts })
-            })
-
-            it('displays "load more" button', () => {
+            it('displays a "load more" button', () => {
               expect(wrapper.find('.load-more').exists()).toBe(true)
             })
 
@@ -171,6 +155,23 @@ describe('ProfileSlug', () => {
               it('displays a loading spinner below the posts list', () => {
                 expect(wrapper.find('.load-more .ds-spinner').exists()).toBe(true)
               })
+            })
+          })
+
+          describe('pagination returned as many posts as available', () => {
+            beforeEach(() => {
+              const posts = [1, 2, 3, 4, 5, 6].map(id => {
+                return {
+                  ...aPost,
+                  id,
+                }
+              })
+
+              wrapper.setData({ posts, hasMore: false })
+            })
+
+            it('displays no "load more" button', () => {
+              expect(wrapper.find('.load-more').exists()).toBe(false)
             })
           })
         })

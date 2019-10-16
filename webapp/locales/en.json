@@ -1,56 +1,4 @@
 {
-  "components": {
-    "password-reset": {
-      "request": {
-        "title": "Reset your password",
-        "form": {
-          "description": "A password reset email will be sent to the given email address.",
-          "submit": "Request email",
-          "submitted": "An email with further instructions has been sent to <b>{email}</b>"
-        }
-      },
-      "change-password": {
-        "success": "Changing your password was successful!",
-        "error": "Changing your password failed. Maybe the security code was not correct?",
-        "help": "In case of problems, feel free to ask for help by sending us a mail to:"
-      }
-    },
-    "enter-nonce": {
-      "form": {
-        "nonce": "Enter your code",
-        "description": "Open your inbox and enter the code that we've sent to you.",
-        "next": "Continue",
-        "validations": {
-          "length": "must be 6 characters long"
-        }
-      }
-    },
-    "registration": {
-      "signup": {
-        "unavailable": "Unfortunately, public registration of user accounts is not available right now on this server.",
-        "title": "Join Human Connection!",
-        "form": {
-          "description": "To get started, enter your email address:",
-          "terms-and-condition": "I confirm to the <a href=\"/terms-and-conditions\"><ds-text bold color=\"primary\" > Terms and conditions</ds-text></a>.",
-          "data-privacy": " I have read and understood the <a href=\"https://human-connection.org/datenschutz/\" target=\"_blank\"><ds-text bold color=\"primary\" >Privacy Statement</ds-text></a> ",
-          "minimum-age": "I'm 18 years or older.",
-          "invitation-code": "Your invitation code is: <b>{code}</b>",
-          "errors": {
-            "email-exists": "There is already a user account with this email address!",
-            "invalid-invitation-token": "It looks like as if the invitation has been used already. Invitation links can only be used once."
-          },
-          "submit": "Create an account",
-          "success": "A mail with a link to complete your registration has been sent to <b>{email}</b>"
-        }
-      },
-      "create-user-account": {
-        "title": "Create user account",
-        "success": "Your account has been created!",
-        "error": "No user account could be created!",
-        "help": " Maybe the confirmation was invalid? In case of problems, feel free to ask for help by sending us a mail to:"
-      }
-    }
-  },
   "maintenance": {
     "title": "Human Connection is under maintenance",
     "explanation": "At the moment we are doing some scheduled maintenance, please try again later.",
@@ -94,7 +42,7 @@
     "bank": "bank account",
     "germany": "Germany",
     "code-of-conduct": "Code of Conduct",
-    "back-to-login": "Back to login page"
+    "login": "Back to login"
   },
   "sorting": {
     "newest": "Newest",
@@ -107,13 +55,50 @@
     "email": "Your Email",
     "password": "Your Password",
     "forgotPassword": "Forgot Password?",
-    "no-account": "Don't have an account?",
-    "register": "Sign up",
     "moreInfo": "What is Human Connection?",
     "moreInfoURL": "https://human-connection.org/en/",
     "moreInfoHint": "to the presentation page",
     "hello": "Hello",
     "success": "You are logged in!"
+  },
+  "password-reset": {
+    "title": "Reset your password",
+    "form": {
+      "description": "A password reset email will be sent to the given email address.",
+      "submit": "Request email",
+      "submitted": "An email with further instructions has been sent to <b>{email}</b>"
+    }
+  },
+  "registration": {
+    "signup": {
+      "title": "Join Human Connection!",
+      "form": {
+        "description": "To get started, enter your email address:",
+        "invitation-code": "Your invitation code is: <b>{code}</b>",
+        "errors": {
+          "email-exists": "There is already a user account with this email address!",
+          "invalid-invitation-token": "It looks like as if the invitation has been used already. Invitation links can only be used once."
+        },
+        "submit": "Create an account",
+        "success": "A mail with a link to complete your registration has been sent to <b>{email}</b>"
+      }
+    },
+    "create-user-account": {
+      "title": "Create user account",
+      "success": "Your account has been created!"
+    }
+  },
+  "verify-nonce": {
+    "form": {
+      "nonce": "Enter your code",
+      "description": "Open your inbox and enter the code that we've sent to you.",
+      "next": "Continue",
+      "change-password": {
+        "success": "Changing your password was successful!",
+        "error": "Changing your password failed. Maybe the security code was not correct?",
+        "help": "In case of problems, feel free to ask for help by sending us a mail to:"
+      }
+    }
   },
   "editor": {
     "placeholder": "Leave your inspirational thoughts …",
@@ -124,12 +109,6 @@
       "noHashtagsFound": "No hashtags found",
       "addHashtag": "New hashtag",
       "addLetter": "Type a letter"
-    },
-    "embed": {
-      "data_privacy_warning": "Data Privacy Warning!",
-      "data_privacy_info": "Your data has not yet been shared with any third party providers. If you proceed to watch this video the following provider will likely collect user data:",
-      "play_now": "Watch now",
-      "always_allow": "Always allow embedded content by third party providers (this setting can be changed any time)"
     }
   },
   "profile": {
@@ -241,22 +220,6 @@
       "accountWarning": "You <b>CAN'T MANAGE</b> and <b>CAN'T RECOVER</b> your Account, Posts, or Comments after deleting your account!",
       "success": "Account successfully deleted!",
       "pleaseConfirm": "<b class='is-danger'>Destructive action!</b> Type <b>{confirm}</b> to confirm"
-    },
-    "embeds": {
-      "name": "Third party providers",
-      "info-description": "Here is the list of third-party providers whose content can be displayed as third-party code, e.g. in the form of embedded videos.",
-      "status": {
-        "description": "As a default for you, embedded code of third-party providers is",
-        "disabled": {
-          "off": "initially not displayed",
-          "on": "displayed immediately"
-        },
-        "change": {
-          "question": "Should embedded source code from third parties always be displayed to you?",
-          "allow": "Sure",
-          "deny": "No thanks"
-        }
-      }
     },
     "organizations": {
       "name": "My Organizations"
@@ -416,7 +379,8 @@
     "reportContent": "Report",
     "validations": {
       "email": "must be a valid email address",
-      "url": "must be a valid URL"
+      "url": "must be a valid URL",
+      "verification-nonce": "must be 6 characters long"
     }
   },
   "actions": {
@@ -433,11 +397,8 @@
     "reports": {
       "empty": "Congratulations, nothing to moderate.",
       "name": "Reports",
-      "reasonCategory": "Category",
-      "reasonDescription": "Description",
-      "createdAt": "Date",
-      "submitter": "Reported by",
-      "disabledBy": "Disabled by"
+      "submitter": "reported by",
+      "disabledBy": "disabled by"
     }
   },
   "disable": {
@@ -497,27 +458,6 @@
       "type": "Comment",
       "message": "Do you really want to report the comment from \"<b>{name}</b>\"?",
       "error": "You have already reported the comment!"
-    },
-    "reason": {
-      "category": {
-        "label": "Select a category:",
-        "placeholder": "Category …",
-        "options": {
-          "discrimination_etc": "Discriminatory posts, comments, utterances or insults.",
-          "pornographic_content_links": "Posting or linking of clearly pornographic material.",
-          "glorific_trivia_of_cruel_inhuman_acts": "Glorification or trivialization of cruel or inhuman acts of violence.",
-          "doxing": "The disclosure of others' personal information without their consent or threat there of (\"doxing\").",
-          "intentional_intimidation_stalking_persecution": "Intentional intimidation, stalking or persecution.",
-          "advert_products_services_commercial": "Advertising products and services with commercial intent.",
-          "criminal_behavior_violation_german_law": "Criminal behavior or violation of German law.",
-          "other": "Other …"
-        },
-        "invalid": "Please select a valid category"
-      },
-      "description": {
-        "label": "Please explain: Why you like to report this?",
-        "placeholder": "Additional information …"
-      }
     }
   },
   "followButton": {
@@ -556,7 +496,6 @@
     }
   },
   "contribution": {
-    "title": "Title",
     "newPost": "Create a new Post",
     "filterFollow": "Filter contributions from users I follow",
     "filterALL": "View all contributions",
@@ -591,9 +530,6 @@
         "it-internet-data-privacy": "IT, Internet & Data Privacy",
         "art-culture-sport": "Art, Culture, & Sport"
       }
-    },
-    "teaserImage": {
-      "cropperConfirm": "Confirm"
     }
   },
   "code-of-conduct": {

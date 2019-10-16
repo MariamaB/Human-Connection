@@ -18,6 +18,7 @@ export default async function fileUpload(params, { file, url }, uploadCallback =
     const fileLocation = `/uploads/${Date.now()}-${slug(name)}`
     await uploadCallback({ createReadStream, fileLocation })
     delete params[file]
+
     params[url] = fileLocation
   }
 

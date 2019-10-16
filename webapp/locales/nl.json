@@ -158,10 +158,7 @@
   },
   "contribution": {
     "edit": "Bijdrage bewerken",
-    "delete": "Bijdrage verwijderen",
-    "teaserImage": {
-      "cropperConfirm": "Bevestigen"
-    }
+    "delete": "Bijdrage verwijderen"
   },
   "comment": {
     "edit": "Commentaar bewerken",

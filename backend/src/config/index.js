@@ -21,12 +21,7 @@ const {
   GRAPHQL_URI = 'http://localhost:4000',
 } = process.env
 
-export const requiredConfigs = {
-  MAPBOX_TOKEN,
-  JWT_SECRET,
-  PRIVATE_KEY_PASSPHRASE,
-}
-
+export const requiredConfigs = { MAPBOX_TOKEN, JWT_SECRET, PRIVATE_KEY_PASSPHRASE }
 export const smtpConfigs = {
   SMTP_HOST,
   SMTP_PORT,
@@ -35,12 +30,7 @@ export const smtpConfigs = {
   SMTP_PASSWORD,
 }
 export const neo4jConfigs = { NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD }
-export const serverConfigs = {
-  GRAPHQL_PORT,
-  CLIENT_URI,
-  GRAPHQL_URI,
-  PUBLIC_REGISTRATION: process.env.PUBLIC_REGISTRATION === 'true',
-}
+export const serverConfigs = { GRAPHQL_PORT, CLIENT_URI, GRAPHQL_URI }
 
 export const developmentConfigs = {
   DEBUG: process.env.NODE_ENV !== 'production' && process.env.DEBUG,

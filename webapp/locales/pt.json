@@ -202,12 +202,8 @@
     }
   },
   "contribution": {
-    "title": "Título",
     "edit": "Editar Contribuição",
-    "delete": "Apagar Contribuição",
-    "teaserImage": {
-      "cropperConfirm": "Confirmar"
-    }
+    "delete": "Apagar Contribuição"
   },
   "comment": {
     "content": {

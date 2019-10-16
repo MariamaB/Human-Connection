@@ -1,5 +1,5 @@
 <template>
-  <editor-content :editor="editor" :key="content" />
+  <editor-content :editor="editor" />
 </template>
 
 <script>
@@ -30,9 +30,6 @@ export default {
         ],
       }),
     }
-  },
-  beforeUpdate() {
-    this.editor.setContent(this.content)
   },
   beforeDestroy() {
     this.editor.destroy()

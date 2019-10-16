@@ -39,7 +39,7 @@ describe('ChangePassword ', () => {
       })
     }
 
-    describe('given email and nonce', () => {
+    describe('given email and verification nonce', () => {
       beforeEach(() => {
         propsData.email = 'mail@example.org'
         propsData.nonce = '123456'
@@ -66,7 +66,7 @@ describe('ChangePassword ', () => {
 
         describe('password reset successful', () => {
           it('displays success message', () => {
-            const expected = 'components.password-reset.change-password.success'
+            const expected = 'verify-nonce.form.change-password.success'
             expect(mocks.$t).toHaveBeenCalledWith(expected)
           })
 

@@ -287,11 +287,6 @@
       "message": "Voulez-vous vraiment publier le commentaire de \"<b>{name}</b>\"?"
     }
   },
-  "contribution": {
-    "teaserImage": {
-      "cropperConfirm": "Confirmer"
-    }
-  },
   "user": {
     "avatar": {
       "submitted": "Téléchargement réussi"

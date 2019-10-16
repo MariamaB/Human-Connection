@@ -20,7 +20,7 @@ describe('ReportModal.vue', () => {
       id: 'c43',
     }
     mocks = {
-      $t: jest.fn(a => a),
+      $t: jest.fn(),
       $filters: {
         truncate: a => a,
       },
@@ -29,9 +29,7 @@ describe('ReportModal.vue', () => {
         error: () => {},
       },
       $apollo: {
-        mutate: jest.fn().mockResolvedValue({
-          data: {},
-        }),
+        mutate: jest.fn().mockResolvedValue(),
       },
     }
   })
@@ -156,7 +154,6 @@ describe('ReportModal.vue', () => {
 
       describe('click confirm button', () => {
         beforeEach(() => {
-          wrapper.find('.ds-radio-option-label').trigger('click')
           wrapper.find('button.confirm').trigger('click')
         })
 

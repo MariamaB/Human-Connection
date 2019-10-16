@@ -292,11 +292,6 @@
       "message": "¿Realmente quieres liberar el comentario de \"<b>{name}</b>\"?"
     }
   },
-  "contribution": {
-    "teaserImage": {
-      "cropperConfirm": "Confirmar"
-    }
-  },
   "user": {
     "avatar": {
       "submitted": "Carga con éxito"

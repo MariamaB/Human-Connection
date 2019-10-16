@@ -85,7 +85,7 @@ function clean(dirty) {
   return dirty
 }
 
-const fields = ['content', 'contentExcerpt', 'reasonDescription']
+const fields = ['content', 'contentExcerpt']
 
 export default {
   Mutation: async (resolve, root, args, context, info) => {
