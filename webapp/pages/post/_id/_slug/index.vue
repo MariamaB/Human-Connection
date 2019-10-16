@@ -68,7 +68,7 @@
       </ds-space>
       <!-- Comments -->
       <ds-section slot="footer">
-        <hc-comment-list :post="post" />
+        <hc-comment-list :post="post" :routeHash="$route.hash" />
         <ds-space margin-bottom="large" />
         <hc-comment-form :post="post" @createComment="createComment" />
       </ds-section>
@@ -200,8 +200,8 @@ export default {
 
     .ds-card-image {
       img {
-        max-height: 710px;
-        object-fit: cover;
+        max-height: 2000px;
+        object-fit: contain;
         object-position: center;
       }
     }
